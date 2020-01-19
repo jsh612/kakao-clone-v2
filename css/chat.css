@@ -34,6 +34,18 @@
   width: 100%;
 }
 
+@keyframes float {
+  0% {
+    box-shadow: 0 10px 30px -5px red;
+  }
+  50% {
+    box-shadow: 0 10px 30px -5px blue;
+  }
+  100% {
+    box-shadow: 0 10px 30px -5px black;
+  }
+}
+
 .chat__write {
   bottom: 0px;
   width: 100%;
@@ -47,6 +59,7 @@
   font-size: 14px;
   transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
     border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
+  animation: float 3s linear infinite forwards;
 }
 
 .chat__icon-left {
@@ -152,4 +165,34 @@
 .sent-message .message__bubble {
   border-bottom-right-radius: 0px;
   background: linear-gradient(to left, #00c6ff, #0072ff);
+}
+
+@keyframes incomingAnim {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.incoming-message {
+  animation: incomingAnim 0.5s ease-out forwards;
+}
+
+@keyframes sentAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sent-message {
+  animation: sentAnimation 0.5s ease-out forwards;
 }
