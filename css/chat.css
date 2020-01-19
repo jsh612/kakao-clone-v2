@@ -28,18 +28,10 @@
 .chat__write--container {
   position: fixed;
   bottom: 0px;
-  /* 가운데 정렬 시키는 방법 */
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  /* --------------------- */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fcfcfc;
-  padding: 0px 20px;
-  /* border-radius: 40px;
-  box-shadow: 2px 9px 10px -1px rgb(102, 100, 100); */
+  width: 100%;
 }
 
 .chat__write {
@@ -49,11 +41,17 @@
   padding: 20px 60px;
   width: 100%;
   border: none;
+  /* 가운데 정렬 방법 */
+  margin: 0 auto;
+  /* ------------ */
   font-size: 14px;
+  transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .chat__icon-left {
   position: absolute;
+  left: 10px;
 }
 
 .chat__icon-right {
@@ -63,11 +61,15 @@
 
 .chat__write:focus {
   outline: none;
+  width: 80%;
+  transform: translateY(-100px);
+  border-radius: 40px;
+  box-shadow: 2px 9px 10px -1px rgb(102, 100, 100);
 }
 
 .chat__icon {
   font-size: 18px;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .chat__write:focus ~ .chat__icon {
@@ -80,9 +82,6 @@
 
 .chat__write-column:nth-child(2) {
   width: 80%;
-}
-
-.chat__write-column input {
 }
 
 .chat-screen .chat__messages {
@@ -102,8 +101,6 @@
   border-radius: 10px;
   margin-bottom: 30px;
   box-shadow: 2px 9px 10px -1px rgb(102, 100, 100);
-  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
-    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px; */
   text-transform: uppercase;
   font-weight: 700;
 }
