@@ -42,3 +42,16 @@ a {
 main {
   animation: fadeIn 0.5s ease-in-out;
 }
+
+@keyframes sizeUp {
+  from {
+    transform: none;
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.nav__badge {
+  animation: sizeUp 1s linear infinite;
+}
